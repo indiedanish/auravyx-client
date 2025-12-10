@@ -29,12 +29,12 @@ export default function Hero() {
           </div>
 
           {/* Hero Headline */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-light mb-6 text-gray-900 leading-tight">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-normal mb-6 text-gray-900 leading-tight">
             AI that finally understands your skin, biology, and lived experience.
           </h2>
 
           {/* Sub-copy */}
-          <p className="text-lg sm:text-xl text-gray-700 font-light mb-12 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-700 font-normal mb-12 max-w-3xl mx-auto leading-relaxed">
             Auravyx is an inclusive wellness intelligence system for skin, nutrition, and daily life. Patent-pending. Created for real people, real tones, real conditions.
           </p>
 
