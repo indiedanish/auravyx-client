@@ -15,7 +15,7 @@ export default function Hero() {
 
   return (
     <BeamsBackground 
-      className="min-h-screen flex items-center justify-center bg-gradient-to-br from-cream-50 via-white to-sage-50"
+      className="min-h-screen flex items-center justify-center"
       intensity="medium"
       colorScheme="green"
     >

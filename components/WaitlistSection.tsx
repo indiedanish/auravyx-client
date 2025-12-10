@@ -44,7 +44,7 @@ export default function WaitlistSection() {
 
   return (
     <BeamsBackground 
-      className="bg-gradient-to-br from-primary-50 via-sage-50 to-cream-50"
+      className=""
       intensity="strong"
       colorScheme="sage"
     >

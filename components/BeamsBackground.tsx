@@ -237,7 +237,7 @@ export default function BeamsBackground({
   }, [intensity, colorScheme]);
 
   return (
-    <div className={cn("relative w-full overflow-hidden", className)}>
+    <div className={cn("relative w-full overflow-hidden bg-cream-200", className)}>
       <canvas ref={canvasRef} className="absolute inset-0 z-0" />
 
       <motion.div
