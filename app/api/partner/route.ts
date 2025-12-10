@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { getSupabaseClient } from '@/lib/supabase';
 
 export const dynamic = 'force-dynamic';
 
@@ -24,6 +24,7 @@ export async function POST(request: Request) {
     }
 
     // Insert into Supabase
+    const supabase = getSupabaseClient();
     const { data, error } = await supabase
       .from('partner_enquiries')
       .insert([
