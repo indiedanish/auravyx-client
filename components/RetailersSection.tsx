@@ -11,7 +11,7 @@ export default function RetailersSection() {
   const [showModal, setShowModal] = useState(false);
 
   return (
-    <Section className="bg-white">
+    <Section id="retailers" className="bg-white">
       <Container>
         <div className="max-w-4xl mx-auto">
           <div className="relative overflow-hidden rounded-3xl border border-primary-200 bg-gradient-to-br from-sage-50 via-cream-50 to-primary-50 p-12 lg:p-16 shadow-xl">

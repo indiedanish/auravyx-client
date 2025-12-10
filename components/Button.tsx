@@ -7,6 +7,7 @@ interface ButtonProps {
   type?: 'button' | 'submit';
   disabled?: boolean;
   className?: string;
+  size?: 'sm' | 'md' | 'lg';
 }
 
 export default function Button({ 
@@ -15,9 +16,16 @@ export default function Button({
   variant = 'primary', 
   type = 'button',
   disabled = false,
-  className = ''
+  className = '',
+  size = 'md'
 }: ButtonProps) {
-  const baseStyles = "px-8 py-4 rounded-full font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed";
+  const sizeStyles = {
+    sm: "px-5 py-2 text-sm",
+    md: "px-8 py-4",
+    lg: "px-10 py-5 text-lg"
+  };
+
+  const baseStyles = "rounded-full font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed";
   
   const variantStyles = {
     primary: "bg-primary-600 hover:bg-primary-700 text-white shadow-lg shadow-primary-600/20 hover:shadow-primary-600/40",
@@ -29,7 +37,7 @@ export default function Button({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`${baseStyles} ${variantStyles[variant]} ${className}`}
+      className={`${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`}
     >
       {children}
     </button>

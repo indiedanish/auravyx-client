@@ -13,7 +13,7 @@ export default function Benefits() {
   ];
 
   return (
-    <Section className="bg-white">
+    <Section id="benefits" className="bg-white">
       <Container>
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">

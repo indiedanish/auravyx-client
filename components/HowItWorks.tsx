@@ -23,7 +23,7 @@ export default function HowItWorks() {
   ];
 
   return (
-    <Section className="bg-gradient-to-br from-cream-50 via-white to-sage-50">
+    <Section id="how-it-works" className="bg-gradient-to-br from-cream-50 via-white to-sage-50">
       <Container>
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-medium text-gray-900 mb-4">
