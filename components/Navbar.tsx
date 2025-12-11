@@ -132,23 +132,23 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        <div
-          className={`lg:hidden fixed inset-0 top-20 bg-white/95 backdrop-blur-xl transition-all duration-500 ease-out ${
-            isMobileMenuOpen
-              ? 'opacity-100 translate-x-0'
-              : 'opacity-0 translate-x-full pointer-events-none'
-          }`}
-        >
-          <div className="flex flex-col h-full px-4 py-8 space-y-2">
+      </nav>
+
+      {/* Mobile Menu - Outside nav for proper layering */}
+      {isMobileMenuOpen && (
+        <>
+          {/* Backdrop */}
+          <div className="lg:hidden fixed inset-0 top-20 z-40 bg-white" />
+          
+          {/* Menu Content */}
+          <div className="lg:hidden fixed inset-0 top-20 z-40 overflow-y-auto">
+            <div className="flex flex-col min-h-full px-4 py-8 space-y-2">
             {/* Mobile Navigation Links */}
             {navLinks.map((link, index) => (
               <button
                 key={link.id}
                 onClick={() => scrollToSection(link.id)}
-                className={`w-full text-left px-6 py-4 text-lg font-medium text-gray-700 hover:text-primary-700 hover:bg-primary-50 rounded-xl transition-all duration-300 ${
-                  isMobileMenuOpen ? 'animate-slide-in' : ''
-                }`}
+                className="w-full text-left px-6 py-4 text-lg font-medium text-gray-700 hover:text-primary-700 hover:bg-primary-50 rounded-xl transition-all duration-300 animate-slide-in"
                 style={{
                   animationDelay: `${index * 50}ms`,
                   animationFillMode: 'backwards'
@@ -177,11 +177,12 @@ export default function Navbar() {
               </Button>
             </div>
 
-            {/* Decorative gradient */}
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-sage-50/50 to-transparent pointer-events-none"></div>
+              {/* Decorative gradient */}
+              <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-sage-50/50 to-transparent pointer-events-none"></div>
+            </div>
           </div>
-        </div>
-      </nav>
+        </>
+      )}
 
       {/* Partner Modal */}
       {showPartnerModal && (
