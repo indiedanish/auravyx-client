@@ -65,29 +65,29 @@ export default function PartnerModal({ onClose }: PartnerModalProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/80 backdrop-blur-sm">
-      <div className="relative w-full max-w-2xl max-h-[90vh] bg-white rounded-3xl border border-sage-100 shadow-2xl flex flex-col">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-gray-900/80 backdrop-blur-sm">
+      <div className="relative w-full max-w-2xl max-h-[95vh] sm:max-h-[90vh] bg-white rounded-2xl sm:rounded-3xl border border-sage-100 shadow-2xl flex flex-col">
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-lg hover:bg-sage-50 transition-colors z-10"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 p-2 rounded-lg hover:bg-sage-50 transition-colors z-10"
           aria-label="Close modal"
         >
-          <X className="w-6 h-6 text-gray-600" />
+          <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-600" />
         </button>
 
         {/* Sticky header section */}
-        <div className="border-b border-sage-100 bg-white p-8 pt-8 pb-6 rounded-t-3xl">
-          <h2 className="text-3xl font-display font-bold text-gray-900 mb-2">
+        <div className="border-b border-sage-100 bg-white p-4 sm:p-8 pt-4 sm:pt-8 pb-4 sm:pb-6 rounded-t-2xl sm:rounded-t-3xl">
+          <h2 className="text-2xl sm:text-3xl font-display font-bold text-gray-900 mb-2">
             Partnership Enquiry
           </h2>
-          <p className="text-gray-600">
+          <p className="text-sm sm:text-base text-gray-600">
             Tell us about your organization and how you'd like to work with Auravyx
           </p>
         </div>
 
         {/* Scrollable content area */}
-        <div className="overflow-y-auto flex-1 p-8 pt-6">
+        <div className="overflow-y-auto flex-1 p-4 sm:p-8 pt-4 sm:pt-6">
           <form onSubmit={handleSubmit} className="space-y-6 pb-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
@@ -179,13 +179,13 @@ export default function PartnerModal({ onClose }: PartnerModalProps) {
         </div>
 
         {/* Sticky button bar at the bottom */}
-        <div className="border-t border-sage-100 bg-white p-6 rounded-b-3xl">
-          <div className="flex gap-4">
+        <div className="border-t border-sage-100 bg-white p-4 sm:p-6 rounded-b-2xl sm:rounded-b-3xl">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <Button 
               type="submit"
               onClick={handleSubmit}
               disabled={status === 'loading'}
-              className="flex-1"
+              className="flex-1 w-full py-4 text-base font-semibold"
             >
               {status === 'loading' ? 'Sending...' : 'Send Enquiry'}
             </Button>
@@ -193,7 +193,7 @@ export default function PartnerModal({ onClose }: PartnerModalProps) {
               type="button" 
               variant="secondary" 
               onClick={onClose}
-              className="flex-1"
+              className="flex-1 w-full py-4 text-base font-semibold"
             >
               Cancel
             </Button>
