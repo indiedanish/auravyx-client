@@ -76,15 +76,18 @@ export default function PartnerModal({ onClose }: PartnerModalProps) {
           <X className="w-6 h-6 text-gray-600" />
         </button>
 
-        {/* Scrollable content area */}
-        <div className="overflow-y-auto flex-1 p-8">
+        {/* Sticky header section */}
+        <div className="border-b border-sage-100 bg-white p-8 pt-8 pb-6 rounded-t-3xl">
           <h2 className="text-3xl font-display font-bold text-gray-900 mb-2">
             Partnership Enquiry
           </h2>
-          <p className="text-gray-600 mb-8">
+          <p className="text-gray-600">
             Tell us about your organization and how you'd like to work with Auravyx
           </p>
+        </div>
 
+        {/* Scrollable content area */}
+        <div className="overflow-y-auto flex-1 p-8 pt-6">
           <form onSubmit={handleSubmit} className="space-y-6 pb-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
