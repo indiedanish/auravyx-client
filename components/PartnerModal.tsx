@@ -66,17 +66,18 @@ export default function PartnerModal({ onClose }: PartnerModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/80 backdrop-blur-sm">
-      <div className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto bg-white rounded-3xl border border-sage-100 shadow-2xl">
+      <div className="relative w-full max-w-2xl max-h-[90vh] bg-white rounded-3xl border border-sage-100 shadow-2xl flex flex-col">
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 rounded-lg hover:bg-sage-50 transition-colors"
+          className="absolute top-4 right-4 p-2 rounded-lg hover:bg-sage-50 transition-colors z-10"
           aria-label="Close modal"
         >
           <X className="w-6 h-6 text-gray-600" />
         </button>
 
-        <div className="p-8">
+        {/* Scrollable content area */}
+        <div className="overflow-y-auto flex-1 p-8">
           <h2 className="text-3xl font-display font-bold text-gray-900 mb-2">
             Partnership Enquiry
           </h2>
@@ -84,7 +85,7 @@ export default function PartnerModal({ onClose }: PartnerModalProps) {
             Tell us about your organization and how you'd like to work with Auravyx
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6 pb-4">
             <div>
               <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
                 Your name *
@@ -162,24 +163,6 @@ export default function PartnerModal({ onClose }: PartnerModalProps) {
               />
             </div>
 
-            <div className="flex gap-4">
-              <Button 
-                type="submit" 
-                disabled={status === 'loading'}
-                className="flex-1"
-              >
-                {status === 'loading' ? 'Sending...' : 'Send Enquiry'}
-              </Button>
-              <Button 
-                type="button" 
-                variant="secondary" 
-                onClick={onClose}
-                className="flex-1"
-              >
-                Cancel
-              </Button>
-            </div>
-
             {responseMessage && (
               <div className={`p-4 rounded-xl ${
                 status === 'success' 
@@ -190,6 +173,28 @@ export default function PartnerModal({ onClose }: PartnerModalProps) {
               </div>
             )}
           </form>
+        </div>
+
+        {/* Sticky button bar at the bottom */}
+        <div className="border-t border-sage-100 bg-white p-6 rounded-b-3xl">
+          <div className="flex gap-4">
+            <Button 
+              type="submit"
+              onClick={handleSubmit}
+              disabled={status === 'loading'}
+              className="flex-1"
+            >
+              {status === 'loading' ? 'Sending...' : 'Send Enquiry'}
+            </Button>
+            <Button 
+              type="button" 
+              variant="secondary" 
+              onClick={onClose}
+              className="flex-1"
+            >
+              Cancel
+            </Button>
+          </div>
         </div>
       </div>
     </div>
