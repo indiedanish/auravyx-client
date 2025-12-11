@@ -4,6 +4,7 @@ import WhatAuravyxDoes from "@/components/WhatAuravyxDoes";
 import WhyThisMatters from "@/components/WhyThisMatters";
 import Benefits from "@/components/Benefits";
 import HowItWorks from "@/components/HowItWorks";
+import RoutineMatrixQuiz from "@/components/RoutineMatrixQuiz";
 import RetailersSection from "@/components/RetailersSection";
 import WaitlistSection from "@/components/WaitlistSection";
 import Footer from "@/components/Footer";
@@ -17,6 +18,7 @@ export default function Home() {
       <WhyThisMatters />
       <Benefits />
       <HowItWorks />
+      <RoutineMatrixQuiz />
       <RetailersSection />
       <WaitlistSection />
       <Footer />
